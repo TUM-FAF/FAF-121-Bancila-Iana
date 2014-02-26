@@ -1,4 +1,3 @@
-          TEST
 # Laboratories Repository
 
 ## Personal Information
