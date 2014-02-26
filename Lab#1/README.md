@@ -51,3 +51,20 @@ Application Creation Steps
 8.	Pressing the CAT button the user will take the available information about cats, all facts and arguments.
 9.	Pressing the DOG button the user will take the available information about dogs, all facts and arguments.
 10.	The Window’s Title.
+
+![mockup] (https://github.com/TUM-FAF/FAF-121-Bancila-Iana/blob/master/Lab%231/mockup.png)
+
+Result Application
+------------------
+This is a screen shot of the application in the virtual Windows 7 environment:
+
+![appimg] (https://github.com/TUM-FAF/FAF-121-Bancila-Iana/blob/master/Lab%231/appimg.png)
+
+Conclusions
+-----------
+   Well, I can say that it was my first serious laboratory work based on C++ language, and I enjoyed executing it. What I have learned from this lab is that in a graphical Windows-based application, a window is a rectangular area of the screen where the application displays output and receives input from the user. Therefore, one of the first tasks of a graphical Windows-based application is to create a window. A window shares the screen with other windows, including those from other applications. Only one window at a time can receive input from the user. The user can use the mouse, keyboard, or other input device to interact with this window and the application that owns it.
+   The main concepts of the event-driven programming are clear for me, so, from this point of view I haven't issues.
+   I think that this laboratory work was very important, because it laid a good foundation, on which to build upon. 
+
+
+
