@@ -165,7 +165,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPa
                 TEXT(placeholder),                                              // Default text.
                 WS_VISIBLE | WS_CHILD | WS_EX_CLIENTEDGE | ES_MULTILINE,        // Textbox styles
                 80, 230,                                                        // the left and top co-ordinates
-                30, 25,                                                        // width and height
+                30, 25,                                                         // width and height
                 hwnd,                                                           // parent window handle
                 (HMENU)IDC_INPUT_TEXT,                                          // the ID of your editbox
                 hInst,                                                          // the instance of your application
@@ -261,7 +261,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPa
                         if(items)
 							strcpy(item, "\r\n > ");
                         else
-							strcpy(item, " > ");                                     // Managing the new string
+							strcpy(item, " > ");         // Managing the new string
                         strcat(item, message);
                         SendMessage(hwndOutputText, EM_REPLACESEL,
                             TRUE, (LPARAM)item);                                     // Appending a new item in the list
@@ -290,7 +290,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPa
 
                         if(!strcmp(message, placeholder))
                         {
-                            SendMessage(hwndInputText, WM_SETTEXT, TRUE,(LPARAM)"");             // Clearing the text input
+                            SendMessage(hwndInputText, WM_SETTEXT, TRUE,(LPARAM)"");         // Clearing the text input
                             focused = 1;
                             RedrawWindow(hwnd, NULL, NULL, RDW_INVALIDATE);
                         }
@@ -306,7 +306,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPa
                                 hwndInputText,
                                 WM_SETTEXT,
                                 TRUE,
-                                (LPARAM)placeholder);                                              // Recovering the placeholder
+                                (LPARAM)placeholder);                                         // Recovering the placeholder
                             focused = 0;
                             RedrawWindow(hwnd, NULL, NULL, RDW_INVALIDATE);
                         }
@@ -399,7 +399,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPa
             hFontOld  = (HFONT)SelectObject(hdc,textFont);                                                     // Setting the text font 
             SetTextColor(hdc,RGB(238,173,14));                                                                 // Setting the text color to a dark orange
             SetBkMode(hdc, TRANSPARENT);                                                                       // Set the background to be transparent
-            DrawText(hdc, "\n\nLAB1_WindowsProgramming", -1, &rect, DT_CENTER | DT_TOP);                        // Drawing the text on top aligning it to center
+            DrawText(hdc, "\n\nLAB1_WindowsProgramming", -1, &rect, DT_CENTER | DT_TOP);                       // Drawing the text on top aligning it to center
             SetTextColor(hdc, RGB(0, 100, 0));                                                                 // Resetting the color to black
 			EndPaint(hwnd, &ps);
             break;
