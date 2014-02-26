@@ -1,4 +1,14 @@
-WP-FAF-121-Bancila-Iana
-=======================
+# Laboratories Repository
 
-Windows Programming
+## Personal Information
+
+**Student:** Bancila Iana
+
+**Group:** FAF-121
+
+**GitHub nickname:** Bancila
+
+## Contained courses
+
+* WP
+* IDE
