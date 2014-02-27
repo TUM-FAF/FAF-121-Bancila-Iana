@@ -52,13 +52,13 @@ Application Creation Steps
 9.	Pressing the DOG button the user will take the available information about dogs, all facts and arguments.
 10.	The Window’s Title.
 
-![mockup] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%231/mockup.png)
+![mockup] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%231/images/mockup.png)
 
 Result Application
 ------------------
 This is a screen shot of the application in the virtual Windows 7 environment:
 
-![appimg] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%231/appimg.png)
+![appimg] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%231/images/appimg.png)
 
 Conclusions
 -----------
