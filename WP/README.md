@@ -2,7 +2,7 @@
 
 ## Personal Information
 
-**Student:** Macrinici Daniel	
+**Student:** Iosif Cabzon	
 
 **Group:** FAF-121
 
