@@ -2,7 +2,7 @@
 
 ## Personal Information
 
-**Student:** Iosif Cabzon	
+**Student:** Băncilă Iana	
 
 **Group:** FAF-121
 
