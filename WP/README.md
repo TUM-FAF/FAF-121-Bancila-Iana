@@ -2,7 +2,7 @@
 
 ## Personal Information
 
-**Student:** Macrinici Daniel	
+**Student:** Băncilă Iana	
 
 **Group:** FAF-121
 
