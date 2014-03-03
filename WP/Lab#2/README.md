@@ -27,3 +27,9 @@ Objectives With Points (completed)
 - Add 2 scroll bars that will manage main window size or position. **(1 pt)**
 - Customize your application by adding an icon and using different cursor in application. **(1 pt)**
 - Use a scroll bar to scroll through application working space. Scroll should appear only when necessary. **(1 pt)**
+
+Application Creation Steps
+--------------------------
+*	For present app I’ve read almost all chapters from the recommended book (["Programming Windows, 5th Edition", by Charles Petzold](http://www.charlespetzold.com/pw5/)) in order to understand how to develop my ideas in such a way as to be understood not only by me. During the process I consult the documentation on the [MSDN](http://msdn.microsoft.com) page and [Win32 Tips & Tricks] (http://www.catch22.net/tuts/win32-tips-tricks#ResizeNoMove).
+*	I checked if the exact project I’m considering has not been done before.
+*	The application 
