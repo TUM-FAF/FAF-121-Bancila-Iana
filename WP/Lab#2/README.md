@@ -41,7 +41,7 @@ Application Creation Steps
 
 Result Application
 ------------------
-These are a screenshots of the application in the virtual Windows 7 environment: 
+These are the screenshots of the application in the virtual Windows 7 environment: 
 
 ![screenshot1] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/screenshot1.png)
 
