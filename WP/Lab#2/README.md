@@ -34,3 +34,5 @@ Application Creation Steps
 *	I checked if the exact project I’m considering has not been done before.
 *	This application proceed the same topic “Cats & Dogs”. So, application has one text label, one field input, here I add 5 buttons ( CAT button, DOG button, ADD button, REMOVE and CLEAR buttons), two static labels, two scrollbars (which change the height and the width of the window), two traversal scrollbars, the main menu (file, view, help).
 *	In order to understand more clearly I made a wireframe model of my application general layout and functionality using paint. Here is the mockup I came up with:
+
+![mockup] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/mockup.png)
