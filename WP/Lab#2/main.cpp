@@ -1,27 +1,6 @@
 #include <windows.h>
+
 #include "resource.h"
-
-#define IDC_LIST_BOX            100
-#define IDC_NEW_ITEM            101
-
-#define IDC_ADD_BUTTON          102
-#define IDC_REMOVE_BUTTON       103
-#define IDC_CLEAR_BUTTON        104
-#define IDC_CAT_BUTTON          105
-#define IDC_DOG_BUTTON          106
-
-#define IDC_FILE_EXIT           107
-#define IDC_VIEW_CAT            108
-#define IDC_VIEW_DOG            109
-#define IDC_HELP_ABOUT          110
-
-#define IDC_HEIGHT_SCROLL       111
-#define IDC_WIDTH_SCROLL        112
-
-#define IDC_LABEL1              113
-#define IDC_LABEL2              114
-
-
 
 int MinWindowHeight = 530;
 int MinWindowWidth  = 590;
@@ -40,14 +19,16 @@ int WINAPI WinMain(HINSTANCE hThisInstance,
     MSG messages;
     WNDCLASSEX wincl;
 
+    hInst = hThisInstance;
+
     wincl.hInstance = hThisInstance;
     wincl.lpszClassName = szClassName;
     wincl.lpfnWndProc = WindowProcedure;
     wincl.style = CS_DBLCLKS | CS_HREDRAW | CS_VREDRAW;
     wincl.cbSize = sizeof (WNDCLASSEX);
     wincl.hIcon = LoadIcon (NULL, IDI_INFORMATION);
-    wincl.hIconSm = LoadIcon (NULL, NULL);
-    wincl.hCursor = LoadCursor (NULL, IDC_HAND);
+    wincl.hIconSm = LoadIcon(hThisInstance, MAKEINTRESOURCE(IDI_ICON1));
+    wincl.hCursor = LoadCursor (hThisInstance, MAKEINTRESOURCE(IDC_CURSOR1));
     wincl.lpszMenuName = NULL;
     wincl.cbClsExtra = 0;
     wincl.cbWndExtra = 0;
@@ -72,6 +53,7 @@ int WINAPI WinMain(HINSTANCE hThisInstance,
         NULL);
 
     ShowWindow (hwnd, nCmdShow);
+    UpdateWindow(hwnd);
 
     while (GetMessage (&messages, NULL, 0, 0)) {
       TranslateMessage(&messages);
@@ -94,9 +76,8 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
     static HWND hwndWidthScroll;
     static HWND hwndLabel1;
     static HWND hwndLabel2;
-    static HWND hwndLabel3;
     static int bgColor=2;
-    PAINTSTRUCT ps;
+
     // Size and position variables
     int SysWidth;
     int SysHeight;
@@ -130,6 +111,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
     int TextLength;
 
     // Paint and size structs
+    PAINTSTRUCT ps;
     TEXTMETRIC tm;
     SCROLLINFO si;
     HBRUSH brush;
@@ -138,11 +120,9 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
     HDC hdc;
 
 
-    hdc = GetDC(hwnd);
     GetTextMetrics(hdc, &tm);
     cxChar = tm.tmAveCharWidth;
     cyChar = tm.tmHeight;
-    ReleaseDC(hwnd, hdc);
 
     switch(message) {
 
@@ -153,7 +133,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 NULL,
                 WS_CHILD | WS_VISIBLE | WS_BORDER | LBS_NOTIFY | LBS_WANTKEYBOARDINPUT,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_LIST_BOX,
+                (HMENU)IDM_LIST_BOX,
                 hInst,
                 NULL);
 
@@ -163,7 +143,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 TEXT(""),
                 WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_NEW_ITEM,
+                (HMENU)IDM_NEW_ITEM,
                 hInst,
                 NULL);
 
@@ -174,7 +154,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 TEXT("Window Width"),
                 WS_CHILD | WS_VISIBLE | SS_LEFT,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_LABEL1,
+                (HMENU)IDM_LABEL1,
                 hInst,
                 NULL);
 
@@ -185,7 +165,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 WS_CHILD | WS_VISIBLE | SS_LEFT,
                 0, 0, 0, 0,
                 hwnd,
-                (HMENU)IDC_LABEL2,
+                (HMENU)IDM_LABEL2,
                 hInst,
                 NULL);
 
@@ -194,7 +174,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 NULL,
                 WS_CHILD | WS_VISIBLE | SBS_HORZ | SBS_BOTTOMALIGN,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_WIDTH_SCROLL,
+                (HMENU)ID_WIDTH_SCROLL,
                 hInst,
                 NULL);
             SetScrollRange(hwndWidthScroll, SB_CTL, 0, 100, TRUE);
@@ -204,7 +184,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 NULL,
                 WS_CHILD | WS_VISIBLE | SBS_HORZ | SBS_BOTTOMALIGN,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_HEIGHT_SCROLL,
+                (HMENU)ID_HEIGHT_SCROLL,
                 hInst,
                 NULL);
             SetScrollRange(hwndHeightScroll, SB_CTL, 0, 100, TRUE);
@@ -215,7 +195,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 TEXT("Add"),
                 WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_ADD_BUTTON,
+                (HMENU)IDM_ADD_BUTTON,
                 hInst,
                 NULL);
 
@@ -225,7 +205,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 TEXT("Remove"),
                 WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_REMOVE_BUTTON,
+                (HMENU)IDM_REMOVE_BUTTON,
                 hInst,
                 NULL);
 
@@ -235,7 +215,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 TEXT("Clear"),
                 WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_CLEAR_BUTTON,
+                (HMENU)IDM_CLEAR_BUTTON,
                 hInst,
                 NULL);
 
@@ -245,7 +225,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 TEXT("Cat"),
                 WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_CAT_BUTTON,
+                (HMENU)IDM_CAT_BUTTON,
                 hInst,
                 NULL);
 
@@ -255,7 +235,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 TEXT("Dog"),
                 WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
                 0, 0, 0, 0, hwnd,
-                (HMENU)IDC_DOG_BUTTON,
+                (HMENU)IDM_DOG_BUTTON,
                 hInst,
                 NULL);
 
@@ -265,22 +245,30 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
             // Add "File" menu, with "Exit" submenu
             hSubMenu = CreatePopupMenu();
             AppendMenu(hMenu, MF_STRING | MF_POPUP, (UINT)hSubMenu, "&File");
-            AppendMenu(hSubMenu, MF_STRING, IDC_FILE_EXIT, "&Exit");
+            AppendMenu(hSubMenu, MF_STRING, IDD_FILE_EXIT, "&Exit");
 
             // Add "View" menu, with "Day" and "Night" submenus
             hSubMenu = CreatePopupMenu();
             AppendMenu(hMenu, MF_STRING | MF_POPUP, (UINT)hSubMenu, "&View");
-            AppendMenu(hSubMenu, MF_STRING, IDC_VIEW_CAT, "&Cat");
-            AppendMenu(hSubMenu, MF_STRING, IDC_VIEW_DOG, "&Dog");
+            AppendMenu(hSubMenu, MF_STRING, IDD_VIEW_CAT, "&Cat");
+            AppendMenu(hSubMenu, MF_STRING, IDD_VIEW_DOG, "&Dog");
 
             // Add "Help" menu, with "About" submenu
             hSubMenu = CreatePopupMenu();
             AppendMenu(hMenu, MF_STRING | MF_POPUP, (UINT)hSubMenu, "&Help");
-            AppendMenu(hSubMenu, MF_STRING, IDC_HELP_ABOUT, "&About");
+            AppendMenu(hSubMenu, MF_STRING, IDD_HELP_ABOUT, "&About");
 
             // Set the menu
             SetMenu(hwnd, hMenu);
             break;
+
+        case WM_SETCURSOR:
+        if (LOWORD(lParam) == HTCLIENT)
+        {
+            SetCursor(LoadCursor(hInst, MAKEINTRESOURCE(IDC_CURSOR1)));
+            return TRUE;
+        }
+        break;
 
         case WM_SIZE:
             Width  = LOWORD(lParam);
@@ -315,7 +303,8 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
             y = y + 20;
             MoveWindow(hwndWidthScroll, x, y, ListBoxWidth, 10, TRUE);
             y = y + 10 + 10;
-            MoveWindow(hwndLabel2, x, y, ListBoxWidth, 20, TRUE);
+            MoveWindow
+            (hwndLabel2, x, y, ListBoxWidth, 20, TRUE);
             y = y + 20;
             MoveWindow(hwndHeightScroll, x, y, ListBoxWidth, 10, TRUE);
             x = xListBox + ListBoxWidth - Width;
@@ -407,7 +396,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
             WinHeight = rect.bottom - rect.top;
             SysWidth = GetSystemMetrics(SM_CXSCREEN);
             SysHeight = GetSystemMetrics(SM_CYSCREEN);
-            if(GetWindowLong((HWND)lParam, GWL_ID) == IDC_WIDTH_SCROLL) {
+            if(GetWindowLong((HWND)lParam, GWL_ID) == ID_WIDTH_SCROLL) {
                 si.cbSize = sizeof(si);
                 si.fMask = SIF_ALL;
                 GetScrollInfo(hwndWidthScroll, SB_CTL, &si);
@@ -436,7 +425,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                 break;
             }
 
-            if(GetWindowLong((HWND)lParam, GWL_ID) == IDC_HEIGHT_SCROLL) {
+            if(GetWindowLong((HWND)lParam, GWL_ID) == ID_HEIGHT_SCROLL) {
                 si.cbSize = sizeof(si);
                 si.fMask = SIF_ALL;
                 GetScrollInfo(hwndHeightScroll, SB_CTL, &si);
@@ -508,23 +497,25 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
             }
             break;
 
+
+
         case WM_COMMAND:
 
             switch (LOWORD(wParam)) {
 
-                case IDC_CAT_BUTTON:
+                case IDM_CAT_BUTTON:
 
                         bgColor = 1;
                     InvalidateRect(hwnd, NULL, TRUE);
                     break;
 
-                case IDC_DOG_BUTTON:
+                case IDM_DOG_BUTTON:
 
                         bgColor = 0;
                     InvalidateRect(hwnd, NULL, TRUE);
                     break;
 
-                case IDC_LIST_BOX:
+                case IDM_LIST_BOX:
                     switch (HIWORD(wParam)) {
                         case LBN_DBLCLK:
                             index = SendMessage(hwndListBox, LB_GETCURSEL, 0, 0);
@@ -534,7 +525,7 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                     }
                     break;
 
-                case IDC_ADD_BUTTON:
+                case IDM_ADD_BUTTON:
                     TextLength = SendMessage(hwndNewItem, WM_GETTEXTLENGTH, 0, 0);
                     szText = (char*)malloc(TextLength+1);
                     SendMessage(hwndNewItem, WM_GETTEXT, TextLength+1, (LPARAM)szText);
@@ -543,30 +534,30 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM 
                     free(szText);
                     break;
 
-                case IDC_REMOVE_BUTTON:
+                case IDM_REMOVE_BUTTON:
                     i = SendMessage(hwndListBox, LB_GETCURSEL, 0, 0);
                     if(i != LB_ERR) {
                         SendMessage(hwndListBox, LB_DELETESTRING, i, 0);
                     }
                     break;
 
-                case IDC_CLEAR_BUTTON:
+                case IDM_CLEAR_BUTTON:
                     SendMessage(hwndListBox, LB_RESETCONTENT, 0, 0);
                     break;
 
-                case IDC_FILE_EXIT:
+                case IDD_FILE_EXIT:
                     SendMessage(hwnd, WM_DESTROY, 0, 0);
                     break;
 
-                case IDC_VIEW_CAT:
-                    SendMessage(hwnd, WM_COMMAND, IDC_CAT_BUTTON, lParam);
+                case IDD_VIEW_CAT:
+                    SendMessage(hwnd, WM_COMMAND, IDM_CAT_BUTTON, lParam);
                     break;
 
-                case IDC_VIEW_DOG:
-                    SendMessage(hwnd, WM_COMMAND, IDC_DOG_BUTTON, lParam);
+                case IDD_VIEW_DOG:
+                    SendMessage(hwnd, WM_COMMAND, IDM_DOG_BUTTON, lParam);
                     break;
 
-                case IDC_HELP_ABOUT:
+                case IDD_HELP_ABOUT:
                     return DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUT), NULL, (DLGPROC)DialogProcedure);
                     break;
 

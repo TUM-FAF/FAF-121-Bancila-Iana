@@ -67,4 +67,3 @@ Conclusions
 The main concepts of the event-driven programming are clear for me, so, from this point of view I haven't issues.
 
 I think that this laboratory work was very important, because it laid a good foundation, on which to build upon. 
-
