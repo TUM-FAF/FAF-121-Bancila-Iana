@@ -41,10 +41,17 @@ Application Creation Steps
 
 Result Application
 ------------------
-This is a screen shot of the application in the virtual Windows 7 environment: 
+This is a screenshots of the application in the virtual Windows 7 environment: 
 
 ![screenshot1] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/screenshot1.png)
 
 ![screenshot2] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/screenshot2.png)
 
 ![AboutBox] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/AboutBox.png)
+
+Conclusions
+-----------
+Well, this laboratory work was very addictive because I’ve tried to manage all the features as good as possible. Although I experienced some issues working with scrollbars (they work with some delay). 
+I was impressed how rapidly I understood almost all concepts of manipulation of keyboard, dialog boxes, listboxes and menus. Another topics I covered either using additional documentation or asking my colleagues. 
+It was challenging to complete all the tasks, I really enjoyed performing all of them. For me it’s new experience and it improve my skills as programmer.  I think there are a little bit space for improvements, and I'll make them as soon as possible. This laboratory work broadened and deepened my understanding of Event-Driven Programming, message-sending, and Win32 API in particular. 
+
