@@ -36,3 +36,5 @@ Application Creation Steps
 *	In order to understand more clearly I made a wireframe model of my application general layout and functionality using paint. Here is the mockup I came up with:
 
 ![mockup] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/mockup.png)
+
+![AboutBoxMockup] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/AboutBoxMockup.png)
