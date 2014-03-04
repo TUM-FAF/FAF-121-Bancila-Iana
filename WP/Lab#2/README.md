@@ -44,5 +44,7 @@ Result Application
 This is a screen shot of the application in the virtual Windows 7 environment: 
 
 ![screenshot1] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/screenshot1.png)
+
 ![screenshot2] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/screenshot2.png)
+
 ![AboutBox] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%232/Images/AboutBox.png)
