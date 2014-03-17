@@ -28,7 +28,7 @@ Application Creation Steps
 •	First of all I've sketched my laboratory work on a paper. Designed all the buttons elements to control the drawing. After that I've added the elements. Then I've set their functionality step by step. And in the end I've added the properties to draw stuff.
 •	In order to understand more clearly I made a wireframe model of my application general layout and functionality. Here is the mockup I came up with:
  
- ![mockup] https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%233/Images/mockup.png
+ ![mockup] (https://raw.github.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%233/Images/mockup.png)
 
 1.	Rectangle filled with gradient.
 2.	The drawing area.
@@ -44,8 +44,6 @@ Application Creation Steps
 •	Bezier curve. You can draw Bezier curve using mouse, just click and drag two times and you're done.
 5.	Custom bitmap image.
  
- ![mockup] 
-
 Result Application
 This is the screenshot of the application in the virtual Windows 8.1 environment: 
 
