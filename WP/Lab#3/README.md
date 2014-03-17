@@ -1,4 +1,4 @@
-# Windows Programming
+Windows Programming
 =====================
 #Laboratory Work #3
 ###### student of FAF-121 gr.: IANA Bancila
