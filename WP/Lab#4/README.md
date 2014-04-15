@@ -16,7 +16,7 @@ Completed Mandatory Objectives
 Completed Objectives With Points
 -----------------------------------
 * Increase and decrease animation speed using mouse wheel **(2 pt.)**
-*	Solve flickering problem (2 pt.)
+*	Solve flickering problem **(2 pt.)**
 *	Add animated objects which interact with each other **(6 pt.)**
 *	Following clear and nice code style **(1 pt.)**
 *	Working on laboratory work using GIT and using as remote repository provided github repo **(1 pt.)**
