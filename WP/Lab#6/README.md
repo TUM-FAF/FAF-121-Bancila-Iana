@@ -35,7 +35,9 @@ Result Application
 ------------------
 These are the screen shots of the application in the virtual Windows 8.1 environment:
 
-![Bubbles] (https://raw.githubusercontent.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%234/Image/Bubbles.png)
+![1] (https://raw.githubusercontent.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%236/Screenshots/1.png)
+![2] (https://raw.githubusercontent.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%236/Screenshots/2.png)
+![3] (https://raw.githubusercontent.com/TUM-FAF/FAF-121-Bancila-Iana/master/WP/Lab%236/Screenshots/3.png)
 
 Conclusions
 -----------
