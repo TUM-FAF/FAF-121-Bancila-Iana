@@ -27,7 +27,7 @@ PAINTSTRUCT ps;
 HPEN WndFramePen;                                                      // A pen dedicated to draw frames
 int ClicksCounter = 0;                                                 // Based on the number of clicks, the program determines what figure needs to be drawn
 int NrBubbles = 0;
-Bubble* B = new Bubble[20];                                                // Keeps the information required to draw a Bubble
+Bubble* B = new Bubble[20];                                            // Keeps the information required to draw a Bubble
 RECT WorkingAreaRect;
 int SpeedRed = 950;                                                    // The value that will be subtracted from 1000. Result will be the actual speed
 // Double buffeBubble
