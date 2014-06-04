@@ -22,4 +22,4 @@ At this step my bird is ready to fly, it is very interesting, and exciting maybe
 
 Results of application
 ----------------------
-![] ()
+![1] (https://raw.githubusercontent.com/TUM-FAF/FAF-121-Bancila-Iana/master/IDE/Screenshots/1.png)
