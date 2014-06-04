@@ -23,3 +23,8 @@ At this step my bird is ready to fly, it is very interesting, and exciting maybe
 Results of application
 ----------------------
 ![1] (https://raw.githubusercontent.com/TUM-FAF/FAF-121-Bancila-Iana/master/IDE/Screenshots/1.png)
+![2] (https://raw.githubusercontent.com/TUM-FAF/FAF-121-Bancila-Iana/master/IDE/Screenshots/2.png)
+
+Conclusion
+----------
+It was the most interesting laboratory work that I did ever and ever! I really enjoyed doing it! I have learned a lot of things and features and implemented them in order to make my application to work in the right manner.  All things that I have planned, I did and I’m proud of me! It’s a nice experience for me and I think I will do a lot of things like this!
